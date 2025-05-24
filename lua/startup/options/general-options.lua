@@ -34,11 +34,22 @@ vim.opt.undofile = true -- Creates a persistant undo history file written to dis
 
 -- Vim options
 vim.opt.updatetime = 500 -- Time (ms) before writing data to swap files, triggering events etc.
-vim.opt.mouse = "a" -- enable mouse in all modes
-vim.opt.laststatus = 3 -- Uses a global status line
+vim.opt.mouse = "a"      -- enable mouse in all modes
+vim.opt.laststatus = 3   -- Uses a global status line
 
 -- Spacing Options
 vim.opt.expandtab = true -- Use spaces instead of tabs
 vim.opt.shiftwidth = 4   -- Number of spaces for indentation
 vim.opt.tabstop = 4      -- Number of spaces per tab
 vim.opt.softtabstop = 4  -- Insert/delete spaces for <Tab>
+
+-- Virtual Text
+vim.diagnostic.config({
+    virtual_text = {
+        spacing = 4,
+        prefix = "-",
+        format = function(diagnostic)
+            return string.format("%s", diagnostic.message)
+        end,
+    }
+})
