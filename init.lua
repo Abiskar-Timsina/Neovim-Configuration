@@ -24,6 +24,8 @@ require("lazy").setup({
     require("plugins.ui"),
     require("plugins.general"),
     require("plugins.tools"),
-    require("plugins.programming"),
     require("plugins.enhancements"),
+    require("plugins.programming"),
+    require("plugins.debuggers"),
+    require("plugins.misc"),
 })
