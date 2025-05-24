@@ -1,3 +1,5 @@
+--NOTE: Virtual Text has some hard dependencies, for example this won't show up
+-- unless you have the correct TS parser installed.
 return {
     "theHamsta/nvim-dap-virtual-text",
     dependencies = { "mfussenegger/nvim-dap" },
