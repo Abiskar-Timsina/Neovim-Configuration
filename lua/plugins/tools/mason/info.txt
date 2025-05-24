@@ -1,0 +1,16 @@
+Do I *really* need all of these? 
+- none-ls
+- Mason
+- mason-lspconfig
+- nvim-lspconfig
+
+YES. Here's what each do,
+
+| ------------------------------------------- | --------------------------------------------------------------------- |
+| Plugin                                      | Purpose                                                               |
+| ------------------------------------------- | --------------------------------------------------------------------- |
+| `mason.nvim`                                | Core installer for tools (LSPs, DAPs, formatters, linters, etc.)      |
+| `mason-lspconfig`                           | Bridges Mason with `nvim-lspconfig`, making LSP install/setup easier  |
+| `nvim-lspconfig`                            | Actually configures and attaches LSPs (e.g., `lua_ls`, `gopls`, etc.) |
+| `none-ls`                                   | Injects formatters/linters into LSP workflow via a pseudo-server      |
+| ------------------------------------------- | --------------------------------------------------------------------- |

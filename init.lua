@@ -5,7 +5,7 @@ vim.g.have_nerd_font = true
 
 -- Load up vim options to make life easier
 -- For more options `:help option-list`
-require("startup.options.init").load_options()
+require("startup.options").load_options()
 
 
 -- Check if the lazy plugin has been installed.
@@ -21,5 +21,9 @@ vim.opt.rtp:prepend(lazyPath)
 
 -- The config and import and install will all be managed by lazy when required this way, refer to the notes.
 require("lazy").setup({
-    require("plugins.ui.init"),
+    require("plugins.ui"),
+    require("plugins.general"),
+    require("plugins.tools"),
+    require("plugins.programming"),
+    require("plugins.enhancements"),
 })
