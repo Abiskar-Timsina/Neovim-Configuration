@@ -1,0 +1,7 @@
+To load up custom config, use
+
+```
+export NVIM_APPNAME=nvim-configuration && nvim
+```
+
+where, nvim-configuration is a dir under ~/.config/
