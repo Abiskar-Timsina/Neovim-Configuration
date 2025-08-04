@@ -19,8 +19,8 @@ return {
             sources = {
                 require("language_config.go.none-ls").formatting(formatting),
                 require("language_config.php.none-ls").formatting(formatting),
-                require("language_config.python3.none-ls").formatting(formatting),
-                require("language_config.python3.none-ls").diagnostics(diagnostics),
+                -- require("language_config.python3.none-ls").formatting(formatting),
+                -- require("language_config.python3.none-ls").diagnostics(diagnostics),
                 require("language_config.ts.none-ls").formatting(formatting),
             }
             ,
