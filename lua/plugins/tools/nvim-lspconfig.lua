@@ -18,5 +18,6 @@ return {
         require("language_config.php.lsp").configure(lspconfig, capabilities)
         require("language_config.python3.lsp").configure(lspconfig, capabilities)
         require("language_config.ts.lsp").configure(lspconfig, capabilities)
+        require("language_config.c.lsp").configure(lspconfig, capabilities)
     end,
 }
