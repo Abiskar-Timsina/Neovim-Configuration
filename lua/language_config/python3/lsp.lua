@@ -1,7 +1,7 @@
 M = {}
 
-M.configure = function(lspconfig, capabilities)
-    lspconfig.pyright.setup({
+M.configure = function(capabilities)
+    vim.lsp.config.pyright = {
         capabilities = capabilities,
         settings = {
             pyright = {
@@ -22,9 +22,9 @@ M.configure = function(lspconfig, capabilities)
                 },
             },
         },
-    })
+    }
 
-    lspconfig.ruff.setup {
+    vim.lsp.config.ruff = {
         capabilities = capabilities,
         init_options = {
             settings = {

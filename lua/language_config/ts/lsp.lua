@@ -1,9 +1,9 @@
 M = {}
 
-M.configure = function(lspconfig, capabilities)
-    lspconfig.ts_ls.setup({
+M.configure = function(capabilities)
+    vim.lsp.config.ts_ls = {
         capabilities = capabilities,
-    })
+    }
 end
 
 return M

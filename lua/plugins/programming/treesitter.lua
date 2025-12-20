@@ -2,9 +2,10 @@
 return {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
+    event = { "BufReadPost", "BufNewFile" },
     config = function()
         require("nvim-treesitter.configs").setup({
-            ensure_installed = { "lua", "go", "python", "php" },
+            ensure_installed = { "lua", "go", "python", "php", "c" },
             auto_install = false, -- This auto installs LSPs if not found but, just to keep stuff clean turning this off
             sync_install = false,
             highlight = { enable = true },

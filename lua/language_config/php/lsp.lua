@@ -1,7 +1,7 @@
 M = {}
 
-M.configure = function(lspconfig, capabilities)
-    lspconfig.intelephense.setup({
+M.configure = function(capabilities)
+    vim.lsp.config.intelephense = {
         capabilities = capabilities,
         settings = {
             intelephense = {
@@ -24,7 +24,7 @@ M.configure = function(lspconfig, capabilities)
                 },
             },
         },
-    })
+    }
 end
 
 return M

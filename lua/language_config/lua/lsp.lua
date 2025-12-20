@@ -1,9 +1,9 @@
 M = {}
 
-M.configure = function(lspconfig, capabilities)
-    lspconfig.lua_ls.setup({
+M.configure = function(capabilities)
+    vim.lsp.config.lua_ls = {
         capabilities = capabilities
-    })
+    }
 end
 
 return M
