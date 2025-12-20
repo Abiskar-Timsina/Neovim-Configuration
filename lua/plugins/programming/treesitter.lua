@@ -1,15 +1,15 @@
 -- Syntax highlighting
 return {
-    "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate",
-    event = { "BufReadPost", "BufNewFile" },
-    config = function()
-        require("nvim-treesitter.configs").setup({
-            ensure_installed = { "lua", "go", "python", "php", "c" },
-            auto_install = false, -- This auto installs LSPs if not found but, just to keep stuff clean turning this off
-            sync_install = false,
-            highlight = { enable = true },
-            indent = { enable = true },
-        })
-    end,
+  "nvim-treesitter/nvim-treesitter",
+  build = ":TSUpdate",
+  lazy = false,
+  event = { "BufReadPost", "BufNewFile" },
+
+  opts = {
+    ensure_installed = { "lua", "go", "python", "php", "c" },
+    auto_install = false,
+    sync_install = false,
+    highlight = { enable = true },
+    indent = { enable = true },
+  },
 }

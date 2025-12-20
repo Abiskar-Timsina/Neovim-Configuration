@@ -1,4 +1,4 @@
 return {
-    require("plugins.programming.todo-highlight"),
-    require("plugins.programming.treesitter"),
+    { import = "plugins.programming.todo-highlight" },
+    { import = "plugins.programming.treesitter" },
 }

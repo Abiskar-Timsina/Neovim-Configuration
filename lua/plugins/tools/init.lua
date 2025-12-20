@@ -1,6 +1,6 @@
 return {
-    require("plugins.tools.none-ls"),
-    require("plugins.tools.auto-complete"),
-    require("plugins.tools.mason.init"),
-    require("plugins.tools.nvim-lspconfig"),
+    { import = "plugins.tools.none-ls" },
+    { import = "plugins.tools.auto-complete" },
+    { import = "plugins.tools.mason" }, -- Point to the folder
+    { import = "plugins.tools.nvim-lspconfig" },
 }

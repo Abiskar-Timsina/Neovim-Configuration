@@ -1,7 +1,6 @@
 return {
-    require("plugins.ui.start-screen"),
-    require("plugins.ui.status-bar"),
-    require("plugins.ui.buffer"),
-    -- Load the theme at last
-    require("plugins.ui.themes.catppuccin")
+    { import = "plugins.ui.start-screen" },
+    { import = "plugins.ui.status-bar" },
+    { import = "plugins.ui.buffer" },
+    { import = "plugins.ui.themes.catppuccin" },
 }

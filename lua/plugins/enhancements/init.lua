@@ -1,4 +1,4 @@
 return {
-    require "plugins.enhancements.flash",
-    require "plugins.enhancements.floating-terminal",
+    { import = "plugins.enhancements.flash" },
+    { import = "plugins.enhancements.floating-terminal" },
 }

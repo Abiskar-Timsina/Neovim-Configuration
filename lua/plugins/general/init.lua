@@ -1,5 +1,5 @@
 return {
-    require("plugins.general.which-key"),
-    require("plugins.general.telescope.init"),
-    require("plugins.general.nvim-tree"),
+    { import = "plugins.general.which-key" },
+    { import = "plugins.general.telescope" }, -- Point to the directory
+    { import = "plugins.general.nvim-tree" },
 }

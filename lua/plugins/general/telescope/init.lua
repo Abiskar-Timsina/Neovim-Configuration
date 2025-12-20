@@ -1,4 +1,4 @@
 return {
-    require("plugins.general.telescope.telescope"),
-    require("plugins.general.telescope.telescope-ui-select"),
+    { import = "plugins.general.telescope.telescope" },
+    { import = "plugins.general.telescope.telescope-ui-select" },
 }

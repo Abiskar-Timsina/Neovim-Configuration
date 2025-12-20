@@ -1,4 +1,4 @@
 return {
-    require("plugins.tools.mason.mason"),
-    require("plugins.tools.mason.mason-lspconfig"),
+    { import = "plugins.tools.mason.mason" },
+    { import = "plugins.tools.mason.mason-lspconfig" }
 }

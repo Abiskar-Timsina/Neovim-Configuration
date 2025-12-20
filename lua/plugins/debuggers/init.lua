@@ -1,5 +1,5 @@
 return {
-    require("plugins.debuggers.dap"),
-    require("plugins.debuggers.dap-ui"),
-    require("plugins.debuggers.dap-virtual-text"),
+  { import = "plugins.debuggers.dap" },
+  { import = "plugins.debuggers.dap-ui" },
+  { import = "plugins.debuggers.dap-virtual-text" },
 }
