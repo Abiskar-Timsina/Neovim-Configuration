@@ -1,16 +1,95 @@
-Do I *really* need all of these? 
-- none-ls
-- Mason
-- mason-lspconfig
-- nvim-lspconfig
+================================================================================
+DEVELOPMENT TOOLS PLUGINS
+================================================================================
 
-YES. Here's what each do,
+This directory contains plugins that form the core of the modern Neovim
+development experience. These tools provide Language Server Protocol (LSP)
+support, autocompletion, formatting, and linting capabilities.
 
-| ------------------------------------------- | --------------------------------------------------------------------- |
-| Plugin                                      | Purpose                                                               |
-| ------------------------------------------- | --------------------------------------------------------------------- |
-| `mason.nvim`                                | Core installer for tools (LSPs, DAPs, formatters, linters, etc.)      |
-| `mason-lspconfig`                           | Bridges Mason with `nvim-lspconfig`, making LSP install/setup easier  |
-| `nvim-lspconfig`                            | Actually configures and attaches LSPs (e.g., `lua_ls`, `gopls`, etc.) |
-| `none-ls`                                   | Injects formatters/linters into LSP workflow via a pseudo-server      |
-| ------------------------------------------- | --------------------------------------------------------------------- |
+PLUGINS IN THIS DIRECTORY:
+---------------------------
+
+1. mason.nvim
+   Purpose: Portable package manager for Neovim development tools
+   Role: Installs and manages LSP servers, DAP adapters, linters, formatters,
+         and other development tools. It eliminates the need to manually install
+         these tools system-wide, making the setup portable and isolated.
+   Why Required: Without Mason, you'd need to manually install each LSP server,
+                 formatter, and linter for each language. Mason automates this
+                 and keeps everything in a Neovim-specific directory.
+
+2. mason-lspconfig.nvim
+   Purpose: Bridge between Mason and nvim-lspconfig
+   Role: Connects Mason (the installer) with nvim-lspconfig (the LSP client).
+         Provides the `ensure_installed` feature to automatically install LSP
+         servers via Mason.
+   Why Required: Simplifies LSP setup by automatically installing required
+                 language servers. Without this, you'd need to manually install
+                 each server and configure them separately.
+
+3. nvim-lspconfig
+   Purpose: Configure Neovim's built-in LSP client
+   Role: Configures Neovim's native LSP client to work with language servers.
+         Provides features like code completion, go to definition, hover docs,
+         diagnostics, code actions, and refactoring.
+   Why Required: LSP is the standard protocol for language-aware editing features.
+                 This plugin is essential for modern development workflows,
+                 providing IDE-like features in Neovim.
+
+4. none-ls.nvim (formerly null-ls)
+   Purpose: Bridge standalone formatters/linters with LSP
+   Role: Wraps command-line formatters and linters as pseudo-LSP servers, allowing
+         them to integrate seamlessly with Neovim's LSP features like
+         auto-formatting on save and inline diagnostics.
+   Why Required: Many formatters and linters aren't LSP servers. None-ls makes
+                 them work with LSP features, providing a unified interface for
+                 formatting and linting across languages.
+
+5. nvim-cmp (autocompletion)
+   Purpose: Completion engine for Neovim
+   Role: Provides intelligent autocompletion from various sources (LSP, snippets,
+         buffers, etc.). It's the completion engine that displays suggestions
+         as you type.
+   Why Required: Essential for productive coding. Provides code completion,
+                 reducing typing and errors. Works with LSP to provide intelligent
+                 suggestions based on code context.
+
+6. LuaSnip
+   Purpose: Snippet engine
+   Role: Provides snippet support, allowing expansion of code templates. Works
+         with nvim-cmp to provide snippet completion.
+   Why Required: Snippets significantly speed up coding by allowing quick
+                 insertion of code templates. Essential for efficient development.
+
+HOW IT FITS IN THE GRAND SCHEME:
+---------------------------------
+
+The tools directory provides the core development infrastructure:
+
+1. Mason installs all the tools (LSPs, formatters, etc.)
+2. mason-lspconfig ensures LSP servers are installed
+3. nvim-lspconfig configures the LSP client
+4. none-ls integrates formatters/linters with LSP
+5. nvim-cmp provides autocompletion
+6. LuaSnip provides snippet support
+
+Together, these plugins create a complete IDE-like experience:
+- Code completion and suggestions
+- Error and warning diagnostics
+- Code formatting
+- Go to definition, references, etc.
+- Code actions and refactoring
+
+This is the most critical directory for the development workflow. Without these
+plugins, Neovim would be a basic text editor. With them, it becomes a powerful
+development environment.
+
+DEPENDENCIES:
+-------------
+
+- Mason must be installed first (it installs the tools)
+- nvim-lspconfig depends on Mason for server installation
+- nvim-cmp depends on nvim-lspconfig for LSP completion
+- none-ls works alongside nvim-lspconfig for formatting/linting
+
+The configuration ensures proper loading order and dependencies.

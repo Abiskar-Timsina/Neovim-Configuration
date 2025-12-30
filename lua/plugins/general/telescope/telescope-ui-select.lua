@@ -1,31 +1,28 @@
+-- ============================================================================
+-- Telescope UI-Select Extension Configuration
+-- ============================================================================
+-- This extension integrates Telescope with vim.ui.select, allowing LSP
+-- actions (like code actions, rename, etc.) to use Telescope's interface
+-- instead of the default vim.ui.select menu.
+
 return {
     "nvim-telescope/telescope-ui-select.nvim",
+    dependencies = { "nvim-telescope/telescope.nvim" },
+    -- NOTE: Using config instead of opts because we need to call load_extension()
+    -- after setup(). opts only handles simple setup() calls.
     config = function()
+        -- Configure the ui-select extension
         require("telescope").setup({
             extensions = {
                 ["ui-select"] = {
+                    -- Use dropdown theme for a cleaner look
                     require("telescope.themes").get_dropdown({
-                        -- even more opts
+                        -- Additional theme options can be added here
                     }),
-
-                    -- pseudo code / specification for writing custom displays, like the one
-                    -- for "codeactions"
-                    -- specific_opts = {
-                    --   [kind] = {
-                    --     make_indexed = function(items) -> indexed_items, width,
-                    --     make_displayer = function(widths) -> displayer
-                    --     make_display = function(displayer) -> function(e)
-                    --     make_ordinal = function(e) -> string
-                    --   },
-                    --   -- for example to disable the custom builtin "codeactions" display
-                    --      do the following
-                    --   codeactions = false,
-                    -- }
                 },
             },
         })
-        -- To get ui-select loaded and working with telescope, you need to call
-        -- load_extension, somewhere after setup function:
+        -- Load the extension so it's available for use
         require("telescope").load_extension("ui-select")
     end,
 }

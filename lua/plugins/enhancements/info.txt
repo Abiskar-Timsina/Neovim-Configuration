@@ -1,0 +1,58 @@
+================================================================================
+ENHANCEMENT PLUGINS
+================================================================================
+
+This directory contains quality-of-life enhancement plugins that improve the
+editing experience with additional features beyond core functionality. These
+plugins add convenience features that make editing more efficient and enjoyable.
+
+PLUGINS IN THIS DIRECTORY:
+---------------------------
+
+1. flash.nvim
+   Purpose: Smart jump navigation
+   Role: Provides intelligent jump navigation by highlighting potential jump
+         targets and allowing quick navigation to them. Similar to vim-sneak
+         or EasyMotion but more modern and integrated with Neovim's LSP features.
+   Why Required: Makes navigation faster and more efficient. Instead of
+                 multiple keystrokes to move to a location, flash allows
+                 quick jumps with visual feedback. Especially useful for
+                 navigating large files or jumping to specific words.
+
+2. nvterm (floating-terminal.lua)
+   Purpose: Integrated floating terminal
+   Role: Provides a floating terminal integrated into Neovim. Allows running
+         shell commands, build scripts, and other terminal operations without
+         leaving the editor. The terminal can be toggled on/off and supports
+         multiple terminal types.
+   Why Required: Essential for development workflows. Allows running commands,
+                 tests, builds, and git operations without switching to an
+                 external terminal. Improves workflow efficiency by keeping
+                 everything in one place.
+
+HOW IT FITS IN THE GRAND SCHEME:
+---------------------------------
+
+The enhancement plugins add convenience features:
+
+- flash.nvim improves navigation efficiency
+- nvterm provides integrated terminal access
+
+These plugins enhance productivity by:
+- Reducing the number of keystrokes needed for navigation
+- Eliminating the need to switch between editor and terminal
+- Providing visual feedback for better user experience
+- Making common tasks faster and more intuitive
+
+While not strictly necessary, these plugins significantly improve the
+editing experience and are considered essential for modern Neovim workflows.
+
+LOADING STRATEGY:
+----------------
+
+Both plugins load lazily (VeryLazy event) to improve startup time:
+- flash.nvim loads when needed (navigation feature)
+- nvterm loads when needed (terminal feature)
+
+This ensures fast startup while maintaining all functionality.
+
