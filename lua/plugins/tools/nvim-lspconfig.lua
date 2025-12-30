@@ -40,7 +40,8 @@ return {
             "lua_ls",       -- Lua language server
             "ruff",         -- Python linter/formatter
             "tsserver",     -- TypeScript/JavaScript language server
-            "intelephense"  -- PHP language server
+            "intelephense", -- PHP language server
+            "pyright"       -- Python LSP
         })
     end,
 }

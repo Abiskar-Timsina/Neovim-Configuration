@@ -9,6 +9,6 @@ return {
     { import = "plugins.ui.start-screen" },        -- Custom startup screen
     { import = "plugins.ui.status-bar" },         -- Statusline (lualine)
     { import = "plugins.ui.buffer" },             -- Bufferline (tab bar)
-    { import = "plugins.ui.themes.catppuccin" },  -- Colorscheme
-    -- { import = "plugins.ui.themes.tokyonight" },  -- Colorscheme
+    -- { import = "plugins.ui.themes.catppuccin" },  -- Colorscheme
+    { import = "plugins.ui.themes.tokyonight" },  -- Colorscheme
 }
