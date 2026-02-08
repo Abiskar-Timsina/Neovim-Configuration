@@ -7,4 +7,5 @@
 return {
     { import = "plugins.programming.todo-highlight" }, -- TODO comment highlighting
     { import = "plugins.programming.treesitter" },     -- Advanced syntax highlighting
+    { import = "plugins.programming.ollama" },
 }
