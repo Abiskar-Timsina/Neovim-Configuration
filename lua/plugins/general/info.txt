@@ -1,0 +1,60 @@
+================================================================================
+GENERAL PURPOSE PLUGINS
+================================================================================
+
+This directory contains plugins that enhance core Neovim functionality for
+general-purpose editing and navigation tasks. These plugins are essential
+for day-to-day editing workflows.
+
+PLUGINS IN THIS DIRECTORY:
+---------------------------
+
+1. which-key.nvim
+   Purpose: Keybinding discovery and help system
+   Role: Displays a popup menu showing available keybindings when you press
+         a prefix key (like <leader>). This is crucial for discovering and
+         remembering custom keybindings without memorizing them all.
+   Why Required: Without this, users would need to remember all custom
+                 keybindings or constantly refer to documentation. It makes
+                 the configuration self-documenting and user-friendly.
+
+2. telescope.nvim
+   Purpose: Fuzzy finder and unified search interface
+   Role: Provides a powerful, extensible fuzzy finder for files, text search,
+         symbols, and more. It's the primary way to navigate files and search
+         content in this configuration.
+   Why Required: Essential for modern Neovim workflows. Replaces multiple
+                 commands with a unified, fast, and extensible interface.
+                 Used for finding files, searching text, browsing symbols,
+                 and accessing recent files.
+
+3. telescope-ui-select.nvim
+   Purpose: Telescope integration with vim.ui.select
+   Role: Makes LSP actions (code actions, rename, etc.) use Telescope's
+         interface instead of the default vim.ui.select menu, providing a
+         consistent and better user experience.
+   Why Required: Provides a better UI for LSP actions compared to the default
+                 vim.ui.select, making the editor more cohesive.
+
+4. nvim-tree.lua
+   Purpose: File tree explorer
+   Role: Provides a sidebar file tree for browsing and opening files. Replaces
+         netrw (Neovim's built-in file explorer) with a more feature-rich
+         and performant alternative.
+   Why Required: Essential for navigating project structure, especially in
+                 large codebases. Provides better integration with the Neovim
+                 ecosystem compared to netrw.
+
+HOW IT FITS IN THE GRAND SCHEME:
+---------------------------------
+
+The general plugins form the foundation of the editing experience:
+- which-key makes the configuration discoverable
+- telescope provides fast navigation and search
+- nvim-tree offers visual file browsing
+- Together, they enable efficient file and content navigation
+
+These plugins are loaded early (or lazily) and are used throughout editing
+sessions. They don't depend on language-specific features and work with
+any file type.
+

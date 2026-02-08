@@ -1,0 +1,79 @@
+================================================================================
+DEBUGGER PLUGINS (DAP)
+================================================================================
+
+This directory contains plugins for the Debug Adapter Protocol (DAP), which
+provides debugging capabilities similar to VS Code. DAP allows you to set
+breakpoints, step through code, inspect variables, and debug applications
+directly within Neovim.
+
+PLUGINS IN THIS DIRECTORY:
+---------------------------
+
+1. nvim-dap (dap.lua)
+   Purpose: Core DAP functionality
+   Role: Provides the core debugging functionality using the Debug Adapter
+         Protocol. It supports setting breakpoints, stepping through code,
+         inspecting variables, evaluating expressions, and more. Works with
+         language-specific debug adapters.
+   Why Required: Essential for debugging applications. Without DAP, you'd need
+                 to use external debuggers or print statements. DAP provides
+                 a unified debugging interface that works across languages.
+
+2. nvim-dap-ui (dap-ui.lua)
+   Purpose: User interface for DAP
+   Role: Provides a user interface for DAP debugging, displaying debugging
+         information in panels showing variables, watches, breakpoints, and
+         the call stack. The UI automatically opens when debugging starts and
+         closes when debugging ends.
+   Why Required: Makes debugging much more user-friendly. Without the UI, you'd
+                 need to use commands for everything. The UI provides visual
+                 feedback and makes it easy to inspect variables and navigate
+                 the call stack.
+
+3. nvim-dap-virtual-text (dap-virtual-text.lua)
+   Purpose: Inline debug information display
+   Role: Displays debugging information inline as virtual text next to your
+         code. Shows variable values, function parameters, and other debug
+         information without needing to open the DAP UI panels.
+   Why Required: Provides quick access to debug information without opening
+                 panels. Makes debugging more efficient by showing variable
+                 values directly in the code, reducing the need to switch
+                 between code and debug panels.
+
+HOW IT FITS IN THE GRAND SCHEME:
+---------------------------------
+
+The debugger plugins provide comprehensive debugging capabilities:
+
+1. nvim-dap provides the core debugging engine
+2. nvim-dap-ui provides visual debugging interface
+3. nvim-dap-virtual-text provides inline debug information
+
+Together, these plugins create a complete debugging experience:
+- Set breakpoints and step through code
+- Inspect variables and evaluate expressions
+- View call stack and navigate execution
+- See variable values inline in the code
+- Debug multiple languages with a unified interface
+
+This is essential for development workflows, especially for complex applications
+where debugging is necessary. The DAP protocol is language-agnostic, so the
+same interface works for Go, PHP, Python, and other languages.
+
+DEPENDENCIES:
+-------------
+
+- nvim-dap is the core plugin (must be loaded first)
+- nvim-dap-ui depends on nvim-dap
+- nvim-dap-virtual-text depends on nvim-dap
+- Language-specific debug adapters must be installed via Mason
+
+The configuration ensures proper loading order and integration between plugins.
+
+NOTE:
+-----
+
+nvim-dap-virtual-text requires the correct Treesitter parser to be installed
+for the language you're debugging, otherwise virtual text won't appear.
+

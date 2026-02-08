@@ -1,0 +1,71 @@
+================================================================================
+PROGRAMMING SUPPORT PLUGINS
+================================================================================
+
+This directory contains plugins that enhance the programming experience with
+advanced syntax highlighting, code analysis, and development workflow features.
+These plugins are essential for understanding and working with code effectively.
+
+PLUGINS IN THIS DIRECTORY:
+---------------------------
+
+1. nvim-treesitter (treesitter.lua)
+   Purpose: Advanced syntax highlighting and code analysis
+   Role: Provides advanced syntax highlighting, code folding, and code analysis
+         using incremental parsing. It's much more accurate than regex-based
+         highlighting and provides better understanding of code structure.
+         Enables features like syntax-aware text objects, better indentation,
+         and code navigation.
+   Why Required: Essential for modern Neovim development. Treesitter provides
+                 accurate syntax highlighting that understands code structure,
+                 not just patterns. It enables many advanced features like
+                 syntax-aware selection, better folding, and improved code
+                 navigation. Without Treesitter, Neovim would use basic regex
+                 highlighting which is less accurate and less powerful.
+
+2. todo-comments.nvim (todo-highlight.lua)
+   Purpose: TODO comment highlighting and tracking
+   Role: Highlights TODO, FIXME, NOTE, and other comment keywords in your code.
+         Makes it easy to find and track todos, bugs, and notes throughout
+         your codebase. Also provides search functionality to find all todos
+         across files.
+   Why Required: Helps track work items, bugs, and notes directly in code.
+                 Makes it easy to find todos and fixme comments across a
+                 codebase. Improves code organization and project management
+                 by making todos visible and searchable.
+
+HOW IT FITS IN THE GRAND SCHEME:
+---------------------------------
+
+The programming plugins enhance code understanding and workflow:
+
+- Treesitter provides accurate syntax highlighting and code understanding
+- todo-comments helps track work items and notes in code
+
+Together, these plugins:
+- Make code more readable with accurate syntax highlighting
+- Enable advanced code navigation and manipulation
+- Help track todos and work items
+- Improve overall code understanding
+
+Treesitter is particularly important as it enables many other features:
+- Better indentation
+- Syntax-aware text objects
+- Improved code folding
+- Better integration with LSP
+- More accurate highlighting
+
+LOADING STRATEGY:
+----------------
+
+- Treesitter loads early (lazy = false) as it's needed for syntax highlighting
+- todo-comments loads on startup (VimEnter event) to highlight todos immediately
+- This ensures syntax highlighting is available from the start
+
+DEPENDENCIES:
+-------------
+
+- Treesitter requires language parsers to be installed (done automatically)
+- todo-comments depends on plenary.nvim for search functionality
+- Both plugins work independently but complement each other
+

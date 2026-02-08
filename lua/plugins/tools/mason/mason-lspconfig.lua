@@ -1,29 +1,31 @@
--- NOTE: Helps bridge the gap between mason and nvim lspconfig, has a very useful `ensure_installed` property.
+-- ============================================================================
+-- Mason-LSPconfig Bridge Configuration
+-- ============================================================================
+-- mason-lspconfig bridges Mason (the installer) with nvim-lspconfig (the
+-- LSP client). It provides the `ensure_installed` feature to automatically
+-- install LSP servers via Mason, and can optionally auto-configure them.
+--
+-- WARN: automatic_enable is set to false because we manually configure
+-- each LSP server in language_config/*/lsp.lua files. Enabling this would
+-- cause duplicate attachments and virtual text appearing multiple times.
+
 return {
     "williamboman/mason-lspconfig.nvim",
-
     dependencies = {
-        { "mason-org/mason.nvim", opts = {} },
-        { "neovim/nvim-lspconfig" }
+        { "mason-org/mason.nvim", opts = {} }, -- Core Mason (using new org name)
+        { "neovim/nvim-lspconfig" }            -- LSP configuration
     },
-
-    config = function()
-        local lsp_config = require("mason-lspconfig")
-        lsp_config.setup({
-            ensure_installed = {
-                -- for lua
-                "lua_ls",
-                -- for php
-                "intelephense",
-                -- for c/cpp
-                "clangd",
-                -- for golang
-                "gopls",
-            },
-            -- WARN: Since I have a config for nvim-lspconfig where I'm manually attaching
-            -- each instance, turning this on will case issues such as the virtual text 
-            -- appearing multiple times and multiple attachments to a single buffer.
-            automatic_enable = false,
-        })
-    end
+    event = "VeryLazy", -- Load after dependencies
+    -- Use opts for cleaner configuration (Lazy automatically calls setup)
+    opts = {
+        -- Automatically install these LSP servers via Mason
+        ensure_installed = {
+            "lua_ls",      -- Lua language server
+            "intelephense", -- PHP language server
+            "clangd",      -- C/C++ language server
+            "gopls",       -- Go language server
+        },
+        -- Disable automatic configuration (we configure manually)
+        automatic_enable = false,
+    },
 }
