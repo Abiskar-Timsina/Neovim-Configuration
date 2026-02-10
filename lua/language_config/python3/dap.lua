@@ -68,6 +68,7 @@ M.configure = function(dap)
                 host = '127.0.0.1',
             },
             justMyCode = false,
+            args = { "-Xfrozen_modules=off", "${file}" },
         },
     }
 end
