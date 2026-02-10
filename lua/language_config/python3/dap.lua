@@ -57,6 +57,7 @@ M.configure = function(dap)
             program = "${file}",
             -- This makes sure it uses the local venv if it exists
             pythonPath = get_python_path,
+            args = { "-Xfrozen_modules=off", "${file}" },
             console = "integratedTerminal",
         },
         {
@@ -68,7 +69,12 @@ M.configure = function(dap)
                 host = '127.0.0.1',
             },
             justMyCode = false,
-            args = { "-Xfrozen_modules=off", "${file}" },
+            pathMappings = {
+                {
+                    localRoot = vim.fn.getcwd(), -- project root on the computer
+                    remoteRoot = '/app',         -- WORKDIR inside the Docker container (can override with launch.json)
+                },
+            },
         },
     }
 end
