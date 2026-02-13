@@ -7,7 +7,7 @@
 
 return {
     "nvim-telescope/telescope.nvim",
-    tag = "0.1.8", -- Pin to stable version for reliability
+    tag = "v0.2.1", -- Pin to stable version for reliability
     dependencies = { "nvim-lua/plenary.nvim" }, -- Required dependency
     event = "VeryLazy", -- Lazy load for better startup performance
     keys = {
