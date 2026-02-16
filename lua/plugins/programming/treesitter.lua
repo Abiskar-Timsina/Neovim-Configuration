@@ -14,8 +14,8 @@ return {
     opts = {
         -- Automatically install parsers for these languages
         ensure_installed = { "lua", "go", "python", "php", "c" },
-        auto_install = false,  -- Don't auto-install missing parsers
-        sync_install = false,  -- Install parsers asynchronously
+        auto_install = true,  -- Don't auto-install missing parsers
+        sync_install = true,  -- Install parsers asynchronously
         highlight = { enable = true }, -- Enable syntax highlighting
         indent = { enable = true },    -- Enable smart indentation
     },

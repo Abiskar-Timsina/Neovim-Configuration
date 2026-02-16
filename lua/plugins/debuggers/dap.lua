@@ -24,11 +24,13 @@ return {
         require("language_config.python3.dap").configure(dap)
 
         -- Load VS Code's launch.json if it exists in the project
-        require('dap.ext.vscode').load_launchjs(nil, {
-            python = { 'python' },
-            go = { 'go' },
-            delve = { 'go' }
-        })
+        -- This seems to no longer be needed in nvimv0.11 and greater
+        -- done automatically.
+        -- require('dap.ext.vscode').load_launchjs(nil, {
+            -- python = { 'python' },
+            -- go = { 'go' },
+            -- delve = { 'go' }
+        -- })
 
     end,
     keys = {
