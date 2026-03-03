@@ -16,7 +16,7 @@ return {
     "neovim/nvim-lspconfig",
     event = { "BufReadPre", "BufNewFile" }, -- Load when opening files
     dependencies = {
-        "hrsh7th/cmp-nvim-lsp", -- Required for LSP completion capabilities
+        "hrsh7th/cmp-nvim-lsp",             -- Required for LSP completion capabilities
     },
     -- NOTE: Using config instead of opts because we need to:
     -- 1. Call language-specific configuration modules
@@ -39,7 +39,7 @@ return {
             "clangd",       -- C/C++ language server
             "lua_ls",       -- Lua language server
             "ruff",         -- Python linter/formatter
-            "tsserver",     -- TypeScript/JavaScript language server
+            "ts_ls",        -- TypeScript/JavaScript language server
             "intelephense", -- PHP language server
             "pyright"       -- Python LSP
         })
