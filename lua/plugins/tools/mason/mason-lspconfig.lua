@@ -15,15 +15,16 @@ return {
         { "mason-org/mason.nvim", opts = {} }, -- Core Mason (using new org name)
         { "neovim/nvim-lspconfig" }            -- LSP configuration
     },
-    event = "VeryLazy", -- Load after dependencies
+    event = "VeryLazy",                        -- Load after dependencies
     -- Use opts for cleaner configuration (Lazy automatically calls setup)
     opts = {
         -- Automatically install these LSP servers via Mason
         ensure_installed = {
-            "lua_ls",      -- Lua language server
+            "lua_ls",       -- Lua language server
             "intelephense", -- PHP language server
-            "clangd",      -- C/C++ language server
-            "gopls",       -- Go language server
+            "clangd",       -- C/C++ language server
+            "gopls",        -- Go language server
+            "terraformls",    -- terraform language server
         },
         -- Disable automatic configuration (we configure manually)
         automatic_enable = false,

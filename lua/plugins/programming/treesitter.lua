@@ -8,14 +8,14 @@
 
 return {
     "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate", -- Update parsers on install
-    lazy = false,         -- Load early (needed for syntax highlighting)
+    build = ":TSUpdate",                     -- Update parsers on install
+    lazy = false,                            -- Load early (needed for syntax highlighting)
     event = { "BufReadPost", "BufNewFile" }, -- Load when opening files
     opts = {
         -- Automatically install parsers for these languages
-        ensure_installed = { "lua", "go", "python", "php", "c" },
-        auto_install = true,  -- Don't auto-install missing parsers
-        sync_install = true,  -- Install parsers asynchronously
+        ensure_installed = { "lua", "go", "python", "php", "c", "terraform" },
+        auto_install = true,           -- Don't auto-install missing parsers
+        sync_install = true,           -- Install parsers asynchronously
         highlight = { enable = true }, -- Enable syntax highlighting
         indent = { enable = true },    -- Enable smart indentation
     },

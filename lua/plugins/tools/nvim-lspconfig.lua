@@ -32,6 +32,7 @@ return {
         require("language_config.php.lsp").configure(capabilities)
         require("language_config.python3.lsp").configure(capabilities)
         require("language_config.ts.lsp").configure(capabilities)
+        require("language_config.terraform.lsp").configure(capabilities)
 
         -- Enable LSP servers (these should be installed via Mason)
         vim.lsp.enable({
@@ -41,7 +42,8 @@ return {
             "ruff",         -- Python linter/formatter
             "ts_ls",        -- TypeScript/JavaScript language server
             "intelephense", -- PHP language server
-            "pyright"       -- Python LSP
+            "pyright",      -- Python LSP
+            "terraformls"   -- terraform LSP
         })
     end,
 }
