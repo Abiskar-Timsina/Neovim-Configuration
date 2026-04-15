@@ -12,7 +12,7 @@
 return {
     "nvimtools/none-ls.nvim",
     dependencies = {
-        "nvimtools/none-ls-extras.nvim", -- Additional builtin sources
+        "nvimtools/none-ls-extras.nvim",    -- Additional builtin sources
     },
     event = { "BufReadPre", "BufNewFile" }, -- Load when opening files
     -- NOTE: Using config instead of opts because we need to call language-specific
@@ -35,7 +35,9 @@ return {
                 -- require("language_config.python3.none-ls").formatting(formatting),
                 -- require("language_config.python3.none-ls").diagnostics(diagnostics),
                 require("language_config.ts.none-ls").formatting(formatting),
+                require("language_config.json.none-ls").formatting(),
             },
+            timeout_ms = 5000,
         })
     end,
 }
