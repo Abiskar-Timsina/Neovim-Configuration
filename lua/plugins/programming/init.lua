@@ -9,4 +9,5 @@ return {
     { import = "plugins.programming.treesitter" },     -- Advanced syntax highlighting
     { import = "plugins.programming.llm" }, -- LLM wrapper to work with different llms
     { import = "plugins.programming.copilot" }, -- copilot plugin to handle auth and copilot session
+    { import = "plugins.programming.git-blame" },
 }
