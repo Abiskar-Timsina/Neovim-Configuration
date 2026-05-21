@@ -36,6 +36,7 @@ return {
                 -- require("language_config.python3.none-ls").diagnostics(diagnostics),
                 require("language_config.ts.none-ls").formatting(formatting),
                 require("language_config.json.none-ls").formatting(),
+                require("language_config.bash.none-ls").formatting(formatting)
             },
             timeout_ms = 5000,
         })
