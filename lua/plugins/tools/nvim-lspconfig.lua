@@ -45,7 +45,7 @@ return {
             "intelephense", -- PHP language server
             "pyright",      -- Python LSP
             "terraformls",   -- terraform LSP
-            "jls"
+            "jdtls"
         })
     end,
 }

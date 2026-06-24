@@ -25,6 +25,7 @@ return {
             "clangd",       -- C/C++ language server
             "gopls",        -- Go language server
             "terraformls",    -- terraform language server
+            "jdtls"
         },
         -- Disable automatic configuration (we configure manually)
         automatic_enable = false,
